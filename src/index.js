@@ -1,15 +1,43 @@
 import "./styles.css";
 import buildHome from "./home.js";
+import buildMenu from "./menu.js";
+import buildAbout from "./about.js";
 
-const buildPage = () => {
+const buildPage = (pageType) => {
   const contentDiv = document.querySelector('#content');
 
   // reset page
-  contentDiv.innerHtml = "";
+  contentDiv.innerHTML = "";
 
-  const homePage = buildHome();
+  let page;
 
-  contentDiv.appendChild(homePage);
+  switch (pageType) {
+    case "home":
+      page = buildHome();
+      break;
+    case "menu":
+      page = buildMenu();
+      break;
+    case "about":
+      page = buildAbout();
+      break;
+    default:
+      throw new Error(`unrecognized page ${pageType}`);
+  }
+
+  contentDiv.appendChild(page);
 };
 
-buildPage();
+(() => {
+  const buttons = document.querySelectorAll("nav>button");
+
+  const handleButtons = (e) => {
+    buildPage(e.target.id);
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", handleButtons);
+  });
+})();
+
+buildPage("home");
