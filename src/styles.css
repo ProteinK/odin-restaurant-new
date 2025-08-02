@@ -3,7 +3,7 @@ header {
   justify-content: center;
   gap: 50px;
 
-  nav {
+  nav button {
     font-size: 2rem;
   }
 }
