@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+
+  nav {
+    font-size: 2rem;
+  }
+}
