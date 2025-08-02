@@ -8,13 +8,44 @@ header {
   }
 }
 
-div.home {
+div.home,
+div.menu,
+div.about {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-h1.home {
+div.about {
+  gap: 10px;
+
+  p {
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+
+h1.home,
+h1.menu,
+h1.about {
   font-size: 3rem;
+}
+
+p.home {
+  font-size: 1.5rem;
+  width: 70%;
+}
+
+div.menuItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 10px;
+  column-gap: 25px;
+  justify-items: center;
+
+  p {
+    font-size: 2rem;
+  }
 }
