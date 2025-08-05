@@ -32,6 +32,8 @@ const buildPage = (pageType) => {
   const buttons = document.querySelectorAll("nav>button");
 
   const handleButtons = (e) => {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    e.target.classList.add("active");
     buildPage(e.target.id);
   };
 

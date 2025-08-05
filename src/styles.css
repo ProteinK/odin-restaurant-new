@@ -1,10 +1,14 @@
-header {
+nav {
   display: flex;
   justify-content: center;
   gap: 50px;
 
-  nav button {
+  button {
     font-size: 2rem;
+  }
+
+  button.active {
+    background-color: aquamarine;
   }
 }
 
